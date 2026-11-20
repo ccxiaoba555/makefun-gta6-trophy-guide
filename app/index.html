@@ -3,23 +3,87 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
+<title>GTA VI Trophy Guide and Tracker — 55 PS5 Trophies</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Vice City Trophy Guide</h1>
+    <p class="sub">Every official trophy, its guide in our own words, a roadmap to the platinum, and a checklist that saves your progress in this browser. No account, no network, nothing leaves your machine.</p>
+    <div class="progress-wrap">
+      <div class="progress-label"><span id="progressText">0 of 55 earned</span><span id="progressPct">0%</span></div>
+      <div class="bar"><div id="progressFill" class="fill"></div></div>
+      <p class="plat"><span id="platText">Platinum: 0 of 54 other trophies</span></p>
+      <p class="grades" id="gradeCounts">1 platinum &middot; 2 gold &middot; 6 silver &middot; 46 bronze &middot; 28 hidden until earned</p>
+    </div>
+  </div>
 </header>
-<div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
-  <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
-</div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
+
+<main>
+  <section class="controls" aria-label="Filters and tools">
+    <input id="search" type="search" placeholder="Search trophies by name or description" aria-label="Search trophies">
+    <label>Kind
+      <select id="kind">
+        <option value="all">All kinds</option>
+        <option value="story">Story</option>
+        <option value="collectible">Collectible</option>
+        <option value="combat">Combat</option>
+        <option value="exploration">Exploration</option>
+        <option value="driving">Driving</option>
+        <option value="misc">Misc</option>
+      </select>
+    </label>
+    <label>Grade
+      <select id="grade">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label>Earned
+      <select id="earnedFilter">
+        <option value="all">Show all</option>
+        <option value="earned">Earned only</option>
+        <option value="unearned">Unearned only</option>
+      </select>
+    </label>
+    <label class="check"><input id="missableOnly" type="checkbox"> Missable only</label>
+    <label class="check"><input id="spoiler" type="checkbox"> Spoiler-safe: hide hidden story trophies until earned</label>
+    <button id="export" type="button">Export progress</button>
+    <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
+  </section>
+
+  <section id="roadmap" class="panel" aria-label="Roadmap to the platinum">
+    <h2>Roadmap to the platinum</h2>
+    <ol id="roadmapList"></ol>
+  </section>
+
+  <section id="missable" class="panel warn" aria-label="Missable trophies">
+    <h2>Missable trophies — read this first</h2>
+    <p>Most trophies can be earned at any time, but the ones below are reported as time-sensitive or tied to choices. Clear them before they can lock.</p>
+    <ul id="missableList"></ul>
+  </section>
+
+  <section class="list-head">
+    <h2 id="listTitle">All 55 trophies</h2>
+    <p id="listCount"></p>
+  </section>
+
+  <div class="layout">
+    <ul id="rows" class="cards"></ul>
+    <aside id="detail" class="detail" aria-live="polite">
+      <p class="detail-empty">Select a trophy to read its full guide and sources.</p>
+    </aside>
+  </div>
+
+  <footer>
+    <p>Trophy names, descriptions and grades are the official PlayStation 5 list as published by Exophase and PSNProfiles. Guides are written in our own words from those descriptions. This guide is fan-made, works fully offline, and is not affiliated with Rockstar Games.</p>
+  </footer>
+</main>
 <script type="module" src="app.js"></script>
 </body>
 </html>

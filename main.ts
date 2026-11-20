@@ -1,3 +1,5 @@
+// Entry: makefun-gta6-trophy-guide (gta6-trophy-guide-01) — offline guide and tracker
+// for the 55 PS5 trophies of Grand Theft Auto VI, built in-session by the builder.
 // A working gta6-trophy-guide-01 entry (Node 22, standard library only): the guide is this directory's app/ folder,
 // plain static files a browser opens at app/index.html (ES modules, CSS, no build step), offline: it loads nothing
 // over the network, and its trophy list and guides are app/data/trophies.json. The program hands it in: it copies app/
@@ -22,6 +24,9 @@ import { buildDossier } from './vendor/makefun-frontend.ts';
 const here = fileURLToPath(new URL('.', import.meta.url));
 const out = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
+// The output directory itself is never removed: in the scoring sandbox /output is a
+// mount point the entry user cannot delete, so this program only creates it and
+// copies files into it.
 mkdirSync(out, { recursive: true });
 cpSync(join(here, 'app'), join(out, 'app'), { recursive: true });
 mkdirSync(join(out, 'screenshots'), { recursive: true });
