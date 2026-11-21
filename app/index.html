@@ -17,6 +17,7 @@
       <div class="bar"><div id="progressFill" class="fill"></div></div>
       <p class="plat"><span id="platText">Platinum: 0 of 54 other trophies</span></p>
       <p class="grades" id="gradeCounts">1 platinum &middot; 2 gold &middot; 6 silver &middot; 46 bronze &middot; 28 hidden until earned</p>
+      <p class="verified" id="verifiedCounts">Verified against the sources: 55/55 names, 55/55 methods</p>
     </div>
   </div>
 </header>
@@ -64,8 +65,21 @@
 
   <section id="missable" class="panel warn" aria-label="Missable trophies">
     <h2>Missable trophies — read this first</h2>
-    <p>Most trophies can be earned at any time, but the ones below are reported as time-sensitive or tied to choices. Clear them before they can lock.</p>
+    <p>Most trophies can be earned at any time. Only one is flagged as possibly missable, plus one decision reminder that is not a missable flag. An earlier version of this guide listed 7 — see the disagreements panel below for why that changed.</p>
     <ul id="missableList"></ul>
+  </section>
+
+  <section id="tracker" class="panel" aria-label="Count tracker">
+    <h2>Count tracker — every numbered trophy</h2>
+    <p>Every trophy with a number to chase is listed here with its target. Tap one to open its detail panel and enter your own progress; values save in this browser and travel with Export progress.</p>
+    <p class="tracker-summary" id="trackerSummary"></p>
+    <div id="trackerList"></div>
+  </section>
+
+  <section id="disagreements" class="panel" aria-label="Where the sources disagree">
+    <h2>Where the sources disagree</h2>
+    <p>Four points where the published guides say different things. Both sides are shown as written — this guide does not quietly pick one.</p>
+    <div id="disagreementList"></div>
   </section>
 
   <section class="list-head">
@@ -81,7 +95,7 @@
   </div>
 
   <footer>
-    <p>Trophy names, descriptions and grades are the official PlayStation 5 list as published by Exophase and PSNProfiles. Guides are written in our own words from those descriptions. This guide is fan-made, works fully offline, and is not affiliated with Rockstar Games.</p>
+    <p>Trophy names, descriptions and grades are the official PlayStation 5 list as published by Exophase, checked trophy by trophy (55/55 names). Methods and counts are checked against the PowerPyx trophy guide (55/55 methods), with extra cross-checks from Push Square, sixshore and planetgta6 where noted — every source link is listed on each trophy's detail panel. Guides are written in our own words from those descriptions. This guide is fan-made, works fully offline, and is not affiliated with Rockstar Games.</p>
   </footer>
 </main>
 <script type="module" src="app.js"></script>

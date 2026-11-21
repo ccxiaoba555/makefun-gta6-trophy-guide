@@ -113,3 +113,47 @@ footer { color: var(--muted); font-size: 13px; margin-top: 28px; border-top: 1px
   .detail { position: static; }
   h1 { font-size: 30px; }
 }
+
+/* --- Rework: verified counts, source links, count tracker, disagreements --- */
+.verified { color: var(--cyan); margin: 8px 0 0; font-size: 14px; font-weight: 700; }
+.tag.count-tag { background: #0f2a4d; color: var(--cyan); border-color: #1d5a73; }
+.detail-sources-title { color: var(--ink); font-weight: 700; font-size: 14px; margin: 0 0 6px; }
+.src-list { list-style: none; margin: 0 0 14px; padding: 0; }
+.src-list li { margin-bottom: 6px; font-size: 13px; color: var(--muted); }
+.src-list a { color: var(--cyan); font-weight: 700; }
+.src-list a:hover { color: var(--gold); }
+.detail-note {
+  background: #2c2410; border: 1px solid #8a6d1a; border-radius: 8px;
+  color: #ffe9a8; font-size: 13px; padding: 10px 12px; margin: 0 0 12px;
+}
+.tracker-box {
+  background: #0b0616; border: 1px solid var(--line); border-radius: 10px;
+  padding: 12px; margin: 0 0 12px;
+}
+.tracker-head { font-weight: 700; margin: 0 0 8px; }
+.tracker-bar { height: 10px; margin-bottom: 10px; }
+.tracker-input-row { font-size: 14px; }
+.tracker-input-row input[type="number"] {
+  width: 90px; background: #0b0616; color: var(--ink);
+  border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; font-size: 14px;
+}
+.tracker-max { color: var(--muted); }
+.tracker-note { color: var(--muted); font-size: 13px; margin: 8px 0 0; }
+.tracker-checklist { color: var(--muted); font-size: 13px; margin: 8px 0 0; padding-left: 20px; }
+.tracker-checklist li { margin-bottom: 2px; }
+.tracker-summary { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+.tracker-row { margin-bottom: 12px; }
+.tracker-row-head {
+  all: unset; display: block; width: 100%; cursor: pointer;
+  font-weight: 700; font-size: 14px; margin-bottom: 6px;
+}
+.tracker-row-head:hover { color: var(--cyan); }
+.disagreement {
+  border: 1px solid var(--line); border-left: 4px solid var(--gold);
+  border-radius: 8px; padding: 12px 14px; margin-bottom: 12px;
+  background: #0b0616;
+}
+.disagreement h3 { margin: 0 0 8px; font-size: 16px; color: var(--ink); }
+.disagreement p { margin: 0 0 6px; font-size: 14px; }
+.disagreement p:last-child { margin-bottom: 0; }
+.disagreement-verdict { color: var(--cyan); }
